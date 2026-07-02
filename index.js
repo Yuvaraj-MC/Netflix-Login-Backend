@@ -8,6 +8,8 @@ app.use(express.json()); //express.json() reads the JSON data sent by Axios and 
 // this two middlewares request will work before hitting the server
 // creating mock users because we dont have the database
 
+const port = process.env.PORT || 5000;
+
 const users = [
   { email: "raju@gmail.com", password: "raju123" },
   { email: "yuvi@gmail.com", password: "yuvi123" },
@@ -63,6 +65,6 @@ app.post("/signup", function (req, res) {
 
 
 
-app.listen(5000, function () {
-  console.log("Backend server started on port 5000");
+app.listen(port, function () {
+  console.log("Backend server started on port " + port);
 });
